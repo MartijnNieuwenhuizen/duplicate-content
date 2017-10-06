@@ -1,5 +1,3 @@
-var textNodes = getAllNodes(document);
-
 function getAllNodes(rootNode) {
     var nodeIterator = document.createNodeIterator(rootNode, NodeFilter.SHOW_TEXT);
     var nodes = [];
@@ -11,6 +9,7 @@ function getAllNodes(rootNode) {
 }
 
 function duplicate() {
+    var textNodes = getAllNodes(document);
     for (var i = 0; i < textNodes.length; i++) {
         textNodes[i].nodeValue += textNodes[i].nodeValue;
     }
